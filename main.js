@@ -1,36 +1,41 @@
-//variables
-let user = 'John Doe';
-console.log(user);
-let student = 'Sergey';
-console.log(student);
-user = student; // Sergey
-console.log(user);
+//Функция palindrome
+const isPalindrome = (str) => str.split('').reverse().join('') === str;
+console.log(isPalindrome('kayak'));
+console.log(isPalindrome('rotator'));
+console.log(isPalindrome('cover'));
 
-//primitives
-let test = 1;
-test++;
-test += '1'; // '21'
-console.log(test);
-test = Boolean(test); // true
-console.log(test);
+//Функция min(a, b)
+const min = (a, b) => Math.min(a, b);
+console.log(min(12, 25));
 
-//arrays
-let someArray = [2, 3, 5, 8];
-let multiply = 1;
-for (let i = 0; i < someArray.length; i++) {
-  multiply *= someArray[i];
+const minNumber = (a, b) => (a < b ? a : b);
+console.log(minNumber(58, 63));
+
+//Функция max(a,b)
+const max = (a, b) => Math.max(a, b);
+console.log(max(12, 25));
+
+const maxNumber = (a, b) => (a < b ? b : a);
+console.log(maxNumber(58, 63));
+
+//Создайте массив с десятью случайными элементами от 0 до 100
+let someArray = [];
+for (let i = 0; i < 10; i++) {
+  someArray[i] = Math.floor(Math.random() * 100);
 }
 
-console.log(multiply);
+console.log(someArray);
 
-let array = [2, 5, 8, 15, 0, 6, 20, 3];
-for (let i = 0; i < array.length; i++) {
-  if (array[i] > 5 && array[i] < 10) console.log(array[i]);
-}
+//Напишите функцию, которая будет заменять все 0 на строку 'zero'
+let numbers = [12, 150, 63, 200, 15, 205, 6090];
 
-let arr = [2, 5, 8, 15, 0, 6, 20, 3];
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] % 2 === 0 && arr[i] > 0) {
-    console.log(arr[i]);
+const includesZero = function (num) {
+  num = num.toString();
+  if (num.includes('0')) {
+    return num.replaceAll('0', 'zero');
+  } else {
+    return +num;
   }
-}
+};
+const changeToZero = (array) => array.map(includesZero);
+console.log(changeToZero(numbers));
