@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "prettier": "prettier --write **/*.{js,html}",
     "lint": "eslint --debug scripts/",
     "lint:write": "eslint --debug scripts/ --fix"
