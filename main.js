@@ -1,41 +1,27 @@
-//Функция palindrome
-const isPalindrome = (str) => str.split('').reverse().join('') === str;
-console.log(isPalindrome('kayak'));
-console.log(isPalindrome('rotator'));
-console.log(isPalindrome('cover'));
+//Напишите функцию sum, которая возвращает сумму чисел
+const summary = (x) => (y) => x + y;
+console.log(summary(15)(35));
 
-//Функция min(a, b)
-const min = (a, b) => Math.min(a, b);
-console.log(min(12, 25));
+//Покрасьте абзацы по клику
+const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
 
-const minNumber = (a, b) => (a < b ? a : b);
-console.log(minNumber(58, 63));
+let par1 = document.getElementById('text1');
+let par2 = document.getElementById('text2');
+let par3 = document.getElementById('text3');
 
-//Функция max(a,b)
-const max = (a, b) => Math.max(a, b);
-console.log(max(12, 25));
-
-const maxNumber = (a, b) => (a < b ? b : a);
-console.log(maxNumber(58, 63));
-
-//Создайте массив с десятью случайными элементами от 0 до 100
-let someArray = [];
-for (let i = 0; i < 10; i++) {
-  someArray[i] = Math.floor(Math.random() * 100);
-}
-
-console.log(someArray);
-
-//Напишите функцию, которая будет заменять все 0 на строку 'zero'
-let numbers = [12, 150, 63, 200, 15, 205, 6090];
-
-const includesZero = function (num) {
-  num = num.toString();
-  if (num.includes('0')) {
-    return num.replaceAll('0', 'zero');
-  } else {
-    return +num;
-  }
+const handleClick = () => {
+  let i = 0;
+  return function changeColor(event) {
+    event.target.style.color = colors[i];
+    i++;
+    if (i >= colors.length) {
+      i = 0;
+    }
+  };
 };
-const changeToZero = (array) => array.map(includesZero);
-console.log(changeToZero(numbers));
+
+par1.addEventListener('click', handleClick());
+par2.addEventListener('click', handleClick());
+par3.addEventListener('click', handleClick());
+
+module.exports = { summary };
