@@ -57,8 +57,14 @@ const data = [
 ];
 
 const searchByString = function(arr, str) {
-    return arr.filter((item) => item.country === str || item.city === str || item.hotel === str)
-        .map((item) => `${item.country}, ${item.city}, ${item.hotel}`).join('\n');
+    let result = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(`${arr[i].country} ${arr[i].city} ${arr[i].hotel}`.includes(str)) {
 
+            result.push(`${arr[i].country} ${arr[i].city} ${arr[i].hotel}`);
+        }
+    }
+    return result.join('\n');
 }
-console.log(searchByString(data, 'Berlin'));
+
+console.log(searchByString(data, 'Ger'));
