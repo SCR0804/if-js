@@ -61,7 +61,6 @@ class Students {
             new Student(item).course
           } курс`,
       );
-    return this.arr.map((item) => `${new Student(item).course}`);
   }
 }
 
