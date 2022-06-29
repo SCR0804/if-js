@@ -1,50 +1,68 @@
-// Напишите функция deepEqual, которая сможет сравнивать 2 объекта с разными уровнями вложенности.
-
-const obj1 = {
-  a: 'a',
-  b: {
-    a: 'a',
-    b: 'b',
-    c: {
-      a: 1,
-    },
+const studentsData = [
+  {
+    firstName: 'Василий',
+    lastName: 'Петров',
+    admissionYear: 2019,
+    courseName: 'Java',
   },
-};
-const obj2 = {
-  b: {
-    c: {
-      a: 1,
-    },
-    b: 'b',
-    a: 'a',
+  {
+    firstName: 'Иван',
+    lastName: 'Иванов',
+    admissionYear: 2018,
+    courseName: 'JavaScript',
   },
-  a: 'a',
-};
-const obj3 = {
-  a: {
-    c: {
-      a: 'a',
-    },
-    b: 'b',
-    a: 'a',
+  {
+    firstName: 'Александр',
+    lastName: 'Федоров',
+    admissionYear: 2017,
+    courseName: 'Python',
   },
-  b: 'b',
-};
+  {
+    firstName: 'Николай',
+    lastName: 'Петров',
+    admissionYear: 2019,
+    courseName: 'Android',
+  },
+];
 
-const deepEqual = function (object1, object2) {
-  if (
-    typeof object1 === 'object' &&
-    object1 !== null &&
-    typeof object2 === 'object' &&
-    object2 !== null
-  ) {
-    if (Object.keys(object1).length !== Object.keys(object2).length) return false;
-    for (let prop in object1) {
-      if (object2.hasOwnProperty(prop)) return deepEqual(object1[prop], object2[prop]);
-    }
-  } else if (object1 !== object2) return false;
-  else return true;
-};
+class User {
+  constructor(prop) {
+    this.firstName = prop.firstName;
+    this.lastName = prop.lastName;
+  }
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
 
-console.log(deepEqual(obj1, obj2));
-console.log(deepEqual(obj1, obj3));
+class Student extends User {
+  constructor(prop) {
+    super(prop);
+    this.admissionYear = prop.admissionYear;
+    this.courseName = prop.courseName;
+  }
+  get course() {
+    return new Date().getFullYear() - this.admissionYear;
+  }
+}
+
+//
+
+class Students {
+  constructor(arr) {
+    this.arr = arr;
+  }
+  getInfo() {
+    return this.arr
+      .sort((a, b) => new Student(a).course - new Student(b).course)
+      .map(
+        (item) =>
+          `${new Student(item).fullName} - ${new Student(item).courseName}, ${
+            new Student(item).course
+          } курс`,
+      );
+  }
+}
+
+const students = new Students(studentsData);
+console.log(students.getInfo());
