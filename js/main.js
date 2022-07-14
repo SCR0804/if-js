@@ -71,11 +71,10 @@ const renderCards = function (properties) {
   this.city = properties.city;
   this.country = properties.country;
   this.imageUrl = properties.imageUrl;
-  this.parentElement = document.querySelector('#renderSection');
-  const element = document.createElement('figure');
-  element.classList.add('homes_pic');
-
-  element.innerHTML = `
+  this.parentElement = document.querySelector('#render_section');
+  const card = document.createElement('figure');
+  card.classList.add('homes_pic');
+  card.innerHTML = `
     <img src=${imageUrl} alt=${name}>
 
                     <figcaption class="homes_desc">
@@ -86,7 +85,6 @@ const renderCards = function (properties) {
                         ${city}, ${country}
                     </figcaption>`;
 
-  parentElement.append(element);
+  parentElement.append(card);
 };
-
 data.forEach((item) => renderCards(item));

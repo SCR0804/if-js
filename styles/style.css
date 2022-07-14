@@ -359,10 +359,9 @@ ul {
 
 .homes_picture {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 16px;
-    overflow: hidden;
 }
 
 .homes_picture:not(:last-child) {
