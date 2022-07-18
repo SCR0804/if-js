@@ -368,6 +368,11 @@ ul {
     margin-right: 16px;
 }
 
+.homes_picture img {
+    width: 280px;
+    height: 300px;
+}
+
 .homes_pic img {
     padding-bottom: 24px;
 }
