@@ -263,8 +263,66 @@ ul {
 .main_form_icons {
     text-align: center;
     margin-top: 120px;
-    padding-bottom: 40px;
+    padding-bottom: 140px;
 
+}
+
+.form_filter__container {
+    display: none;
+    width: 239px;
+    height: auto;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    top: 616px;
+    left: 815px;
+    border: 1px solid #333333;
+}
+
+.form_filter {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 22px 0;
+}
+
+.form_filter__wrap {
+    display: flex;
+    padding: 0 22px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form_filter__counter {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.form_filter__text, .form_filter__value {
+    font-syze: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+.form_btn__minus, .form_btn__plus {
+    width: 30px;
+    height: 30px;
+}
+
+.form_children__title {
+    font-weight: 400;
+    font-size: 12px;
+    color: #333333;
+}
+
+.form_children {
+    display: none;
+    padding: 0 22px;
+}
+
+.form_children__box {
+    padding: 22px;
 }
 
 /*Section*/
