@@ -87,6 +87,7 @@ btnAddChild.addEventListener('click', () => {
     if (allChildren === +btnAddChild.dataset.max) {
         return;
     }
+
     childrenWrap.style.display = 'block';
     childrenBox.insertAdjacentHTML('afterbegin', child);
 })
