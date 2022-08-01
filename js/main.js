@@ -12,7 +12,7 @@ async function fetchData() {
                     <figcaption class="homes_desc_two">
                         ${card.city}, ${card.country}
                         </figcaption>
-    </figure>`);
+    </figure>`).join('');
     parent.insertAdjacentHTML('afterbegin', cards);
 };
 
