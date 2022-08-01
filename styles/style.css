@@ -332,6 +332,16 @@ ul {
 
 /*Main end*/
 
+/* Section Available hotels start*/
+
+.available_hotels {
+    display: none;
+}
+
+
+/*Section Available hotels end*/
+
+
 /*Section Homes start*/
 .section_homes {
     background-color: #EAF0F9;
@@ -370,6 +380,8 @@ ul {
 
 .homes_pic img {
     padding-bottom: 24px;
+    width: 295px;
+    height: 319px;
 }
 
 .homes_desc {
